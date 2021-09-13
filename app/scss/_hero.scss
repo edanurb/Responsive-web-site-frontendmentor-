@@ -1,0 +1,66 @@
+.hero{
+    display: flex;
+    background-color: $veryLightGray;
+    height: 750px;
+    @include breakpoint-down($mobile){
+        flex-direction: column-reverse;
+        height: auto;
+    }
+    
+
+    &_text{
+        flex: 2;
+        margin-top: 12.5rem;
+        @include breakpoint-down($mobile){
+           margin-top: 0;
+           margin-bottom:3.125rem ;
+           text-align: center;
+        
+        }
+        h1{
+            color: $darkBlue;
+            font-size: $font-xlg;
+            font-weight: 300;
+            line-height: 4.15rem;
+            
+        }
+        p{
+            color: $grayishBlue;
+            margin-bottom: 1.875rem;
+
+        }
+    }
+    &_img{
+        flex: 3;
+        overflow: hidden;
+        @include breakpoint-down($mobile){
+            position: relative;
+        }
+
+        .mockup{
+            position: absolute;
+            top: -2.875px;
+
+            transform: translateX(12.5rem);
+            @include breakpoint-down($mobile){
+                top: -50px;
+                height: 100%;
+                transform:translateX(-50%);
+                left:50%;
+                
+            }
+
+        }
+        .desktop_svg{
+            margin-top:-16rem;
+            //height:50%;
+        }
+        .mobile_svg{
+            
+            width: 100%;
+        }
+
+    }
+    
+    
+}

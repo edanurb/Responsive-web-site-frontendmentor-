@@ -1,0 +1,152 @@
+.header{
+    background-color: $white;
+    font-size: $font-sm;
+    
+    
+    nav{
+        padding-top:  1rem;
+        padding-bottom:  1rem;
+        background-color: $white;
+
+
+        position: relative;
+        z-index: 10;
+       
+    }
+
+    &__menu_links{
+        ul{
+            
+            :not(:last-child){
+                margin-right:1.875rem ;
+                
+            }
+        }
+        li{
+            position: relative;
+            display:inline;
+            
+        }
+        
+        //height:max-content;
+        a{
+            position: relative;
+            color: $grayishBlue;
+            transition: all 200ms ease-in-out;
+            
+             
+            
+            
+        }
+        a:hover{
+            :first-child{
+            color: $darkBlue; 
+            }
+        }
+        a:hover::before{
+            width: 100%;
+        }
+        
+        a::before{
+            content: "";
+            position: absolute;
+            bottom: -2rem;
+            width: 0%;
+            height: 5px;
+            background-color: $brightCyan;
+            border-radius: 5px;
+            background-image: linear-gradient(to right, $limeGreen, $brightCyan);
+            transition: all 200ms ease-in-out;
+        }
+    }
+
+    &__burger{
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    &__burger > *{
+        background-color: $darkBlue;
+        height: 2px;
+        width:18px;
+        transition: all 300ms ease-in-out;
+        
+
+        &:not(:last-child){
+            margin-bottom: 6px;
+        }
+    }
+    .overlay{
+        visibility:hidden;
+        opacity: 0;
+        transition: all 300ms ease-in-out;
+        position:fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-image: linear-gradient($darkBlue, transparent);
+        z-index: 1;
+    }
+    //Burger menu open 
+    &.open{
+       
+        .header__burger{
+            >:first-child{
+                transform:rotate(45deg) translate(5px,6px);
+               
+            }
+            
+            >:nth-child(2){
+                opacity: 0;
+                
+            }
+
+            >:last-child{
+                transform:rotate(-45deg) translate(5px,-6px);
+            }
+    
+        }
+        
+        .overlay
+        {
+            visibility:visible;
+            opacity: 1;
+            z-index: 1;
+
+        } 
+
+        
+        
+        .header__menu_links{
+            position:absolute;
+            border-radius: 3px;
+            top: 4.125rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            align-items: center;
+            background-color: $white;
+            ul{
+                display: block;
+            }
+            li{
+                padding: 20px 0;
+                display: block;
+                text-align: center;
+                margin: 0;
+                
+            }
+            li::before{
+                display: none;
+            }
+            a::before{
+                visibility: hidden;
+            }
+
+        
+        }
+        
+    }
+    
+}
