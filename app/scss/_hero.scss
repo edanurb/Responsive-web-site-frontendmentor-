@@ -2,6 +2,7 @@
     display: flex;
     background-color: $veryLightGray;
     height: 750px;
+    //overflow: hidden;
     @include breakpoint-down($mobile){
         flex-direction: column-reverse;
         height: auto;
@@ -27,20 +28,30 @@
         p{
             color: $grayishBlue;
             margin-bottom: 1.875rem;
+            line-height: 1.25rem;
 
         }
     }
     &_img{
+        position: relative;
         flex: 3;
         overflow: hidden;
+
+        //overflow-y:visible;
         @include breakpoint-down($mobile){
             position: relative;
         }
-
+        /*div{
+            height: 100%;
+            background-color: $limeGreen;
+            position: relative;
+           
+        }*/
+        
         .mockup{
-            position: absolute;
+            position:absolute;
             top: -2.875px;
-
+            
             transform: translateX(12.5rem);
             @include breakpoint-down($mobile){
                 top: -50px;
@@ -49,7 +60,7 @@
                 left:50%;
                 
             }
-
+            overflow-x: hidden;
         }
         .desktop_svg{
             margin-top:-16rem;
