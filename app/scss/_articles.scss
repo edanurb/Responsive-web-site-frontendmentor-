@@ -1,11 +1,22 @@
 .articles{
     font-family: 'Public Sans', sans-serif;
     background-color: $lightGrayishBlue;
+    padding-bottom: 2.5rem;
+    @include breakpoint-down($mobile){
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
     
 
     &_head{
+        
         padding-top: 6.25rem;
         //padding-bottom: 4rem;
+        @include breakpoint-down($mobile){
+            width: 100%;
+        }
+
         width: 60%;
         h2{
             color: $darkBlue;

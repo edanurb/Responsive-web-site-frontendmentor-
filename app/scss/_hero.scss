@@ -1,7 +1,7 @@
 .hero{
     display: flex;
     background-color: $veryLightGray;
-    height: 750px;
+    height: 650px;
     //overflow: hidden;
     @include breakpoint-down($mobile){
         flex-direction: column-reverse;
@@ -35,11 +35,14 @@
     &_img{
         position: relative;
         flex: 3;
-        overflow: hidden;
+        height: 750px;
+        width: 50%;
+        //overflow: hidden;
 
         //overflow-y:visible;
         @include breakpoint-down($mobile){
             position: relative;
+            width: 100%;
         }
         /*div{
             height: 100%;
@@ -47,8 +50,36 @@
             position: relative;
            
         }*/
-        
         .mockup{
+            position: absolute;
+            top: -172px;
+            
+            @include breakpoint-down($mobile){
+                position: absolute;
+                //transform: translateY(-200%);
+                left: 50%;
+                height: 95%;
+                top: 0;
+                transform: translateX(-50%);
+            }
+            
+        }
+        .container{
+            position: relative;
+            overflow-x: hidden;
+            //height: 900px;
+            @include breakpoint-down($mobile){
+                position: relative;
+                //overflow: visible;
+              
+                //height:px;
+                //transform:translateY(-100%);
+                
+                
+            }
+            
+        }
+        /*.mockup{
             position:absolute;
             top: -2.875px;
             
@@ -61,7 +92,7 @@
                 
             }
             overflow-x: hidden;
-        }
+        }*/
         .desktop_svg{
             margin-top:-16rem;
             //height:50%;

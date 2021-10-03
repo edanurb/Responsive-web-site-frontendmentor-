@@ -1,0 +1,111 @@
+.footer{
+    background-color:$darkBlue;
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint-down($tablet){
+        display: block;
+    }
+    //justify-content: space-between;
+    &_logos{
+        padding-top: 3.125rem;
+        //padding-right: 6.25rem;
+        @include breakpoint-down($tablet){
+            padding-top:3.125rem;
+            padding-right: 0;
+            text-align: center;
+        }
+    }
+    &_logo{
+        margin-bottom: 2.5rem;;
+
+        img{
+            height: 1.25rem;
+        }
+    }
+    &_social_media_logo{
+        :not(:last-child){
+            margin-right: 1.875rem;
+           }
+
+        a{
+            height: 20px;
+            width: 20px;
+            
+            path{
+                transition: all 100ms ease-in-out;
+            }
+            &:hover svg path{
+                fill: $limeGreen;
+            }
+            
+           
+        }/*
+        svg{
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+            padding-right: 1.875rem;
+
+            
+        }*/
+    }
+
+    &_info{
+        @include breakpoint-down($tablet){
+            padding-bottom:1.875rem;
+            text-align: center;
+        }
+        ul{
+            padding-top: 2.5rem;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            @include breakpoint-down($tablet){
+                display: block;
+                
+            }
+
+        }
+        a{
+            padding-top: 1.25rem;
+            padding-right: 3.75rem;
+            color:white;
+            font-size: 1rem;
+            transition: all 100ms ease-in-out;
+            &:hover{
+                color: $limeGreen;
+            }
+        }
+    
+        
+        li{
+
+        }
+    }
+    &_btn_rights{
+        //padding-left:17.5rem ;
+        padding-top: 2.5rem;
+        @include breakpoint-down($tablet){
+            padding:0;
+            text-align: center;
+        }
+        h4{
+            
+            padding-top: 1.875rem;
+            color:  $grayishBlue;
+            font-size: small;
+        }
+    }
+
+
+}
+.creater{
+    margin: 0;
+    text-align: center;
+    background-color: $darkBlue;
+    color: $white;
+    font-size: $font-sm;
+    padding: 3.125rem;
+    @include breakpoint-down($tablet){
+        padding:1.875rem;
+        
+    }
+}
